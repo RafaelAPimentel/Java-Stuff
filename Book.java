@@ -8,30 +8,48 @@
  *
  * @author Guido
  */
-public abstract class Book {
-    private String title;
-    protected double price;
-    public abstract void setPrice();
+import javax.swing.*;
+public class Book {
     
-   public Book(String title ){
-       this.title = title;
-   }
+    private String title;
+    private int numOfPages;
 
     /**
+     * @param title
+     * @param numOfPages
      * @return the title
      */
+    public Book(String title, int numOfPages){
+        this.title = title;
+        this.numOfPages = numOfPages;
+    }
     public String getTitle() {
         return title;
     }
-    
-    public void display(){
-        System.out.println("Title: "+getTitle()+"\nPrice: "+getPrice());
+
+    /**
+     * @param title the title to set
+     */
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     /**
-     * @return the price
+     * @return the numOfPages
      */
-    public double getPrice() {
-        return price;
+    public int getNumOfPages() {
+        return numOfPages;
+    }
+
+    /**
+     * @param numOfPages the numOfPages to set
+     */
+    public void setNumOfPages(int numOfPages) {
+        this.numOfPages = numOfPages;
+    }
+    
+    public void display(){
+        JOptionPane.showMessageDialog(null, "Title: "+ getTitle()+"\nPage Number: "+getNumOfPages());
     }
 }
+ 
