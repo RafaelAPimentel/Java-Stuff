@@ -1,3 +1,5 @@
+package swingcomponents;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,7 +12,6 @@ import java.awt.Font;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
-import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -22,7 +23,7 @@ import javax.swing.JLabel;
  */
 public class CheckBoxDemonstration extends JFrame implements ItemListener
 {
-    List<String> arr = new ArrayList<String>();
+    ArrayList arr = new ArrayList();
     FlowLayout flow = new FlowLayout();
     JLabel label = new JLabel("What would you like to drink");
     JCheckBox coffee = new JCheckBox("coffee",false);
@@ -48,6 +49,7 @@ public class CheckBoxDemonstration extends JFrame implements ItemListener
         add(water);
         add(out);
     }
+    @Override
     public void itemStateChanged(ItemEvent e)
     {
        //actions based on choice go here
@@ -106,8 +108,5 @@ public class CheckBoxDemonstration extends JFrame implements ItemListener
         frame.setSize(FRAME_WIDTH,FRAME_HEIGHT);
         frame.setVisible(true);
     }
-    
-    
-    
-    
+
 }
