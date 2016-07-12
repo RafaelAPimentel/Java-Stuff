@@ -18,12 +18,13 @@ import javax.swing.JTextField;
  *
  * @author Guido
  */
-public class JFrameWithComponents extends JFrame implements ActionListener{
+public class JFrameWithComponents extends JFrame implements ActionListener {
+
     JLabel label = new JLabel("Enter your name");
     JTextField field = new JTextField(12);
     JButton button = new JButton("OK");
-    
-    public JFrameWithComponents(){
+
+    public JFrameWithComponents() {
         super("Frame with components");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
@@ -33,19 +34,21 @@ public class JFrameWithComponents extends JFrame implements ActionListener{
         button.addActionListener(this);
         field.addActionListener(this);
     }
-    
-    public void actionPerformed(ActionEvent e){
+
+    public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        if(source==button)
+        if (source == button) {
             label.setText("You've clicked the button");
-        else
+        } else {
             label.setText("You've pressed enter");
+        }
     }
+
     public static void main(String[] args) {
         JFrameWithComponents aFrame = new JFrameWithComponents();
         final int WIDTH = 350;
         final int HEIGHT = 100;
-        aFrame.setSize(WIDTH,HEIGHT);
+        aFrame.setSize(WIDTH, HEIGHT);
         aFrame.setVisible(true);
     }
 }

@@ -5,8 +5,6 @@ package swingcomponents;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ItemEvent;
@@ -21,23 +19,23 @@ import javax.swing.JLabel;
  *
  * @author Guido
  */
-public class CheckBoxDemonstration extends JFrame implements ItemListener
-{
+public class CheckBoxDemonstration extends JFrame implements ItemListener {
+
     ArrayList arr = new ArrayList();
     FlowLayout flow = new FlowLayout();
     JLabel label = new JLabel("What would you like to drink");
-    JCheckBox coffee = new JCheckBox("coffee",false);
-    JCheckBox cola = new JCheckBox("cola",false);
-    JCheckBox milk = new JCheckBox("milk",false);
-    JCheckBox water = new JCheckBox("water",false);
+    JCheckBox coffee = new JCheckBox("coffee", false);
+    JCheckBox cola = new JCheckBox("cola", false);
+    JCheckBox milk = new JCheckBox("milk", false);
+    JCheckBox water = new JCheckBox("water", false);
     JLabel out = new JLabel("");
-    String output,insChosen;
-    public CheckBoxDemonstration()
-    {
+    String output, insChosen;
+
+    public CheckBoxDemonstration() {
         super("CheckBox Demonstration");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
-        label.setFont(new Font("Arial",Font.ITALIC,22));
+        label.setFont(new Font("Arial", Font.ITALIC, 22));
         coffee.addItemListener(this);
         cola.addItemListener(this);
         milk.addItemListener(this);
@@ -49,63 +47,55 @@ public class CheckBoxDemonstration extends JFrame implements ItemListener
         add(water);
         add(out);
     }
+
     @Override
-    public void itemStateChanged(ItemEvent e)
-    {
-       //actions based on choice go here
-        
+    public void itemStateChanged(ItemEvent e) {
+        //actions based on choice go here
+
         Object source = e.getItem();
-        if (source == coffee){
+        if (source == coffee) {
             int select = e.getStateChange();
-            if(select == ItemEvent.SELECTED){
+            if (select == ItemEvent.SELECTED) {
                 arr.add("coffee");
-            }
-            else{
+            } else {
                 arr.remove("coffee");
             }
-            
-        
-        }
-        else if(source == cola){
-        int select = e.getStateChange();
-            if(select == ItemEvent.SELECTED){
+
+        } else if (source == cola) {
+            int select = e.getStateChange();
+            if (select == ItemEvent.SELECTED) {
                 arr.add("cola");
-            }
-            else{
+            } else {
                 arr.remove("cola");
             }
-            
-        }
-        else if(source == milk){
-        int select = e.getStateChange();
-            if(select == ItemEvent.SELECTED){
+
+        } else if (source == milk) {
+            int select = e.getStateChange();
+            if (select == ItemEvent.SELECTED) {
                 arr.add("milk");
-            }
-            else{
+            } else {
                 arr.remove("milk");
             }
-            
-        }
-        else if(source == water){
-        int select = e.getStateChange();
-            if(select == ItemEvent.SELECTED){
+
+        } else if (source == water) {
+            int select = e.getStateChange();
+            if (select == ItemEvent.SELECTED) {
                 arr.add("water");
-            }
-            else{
+            } else {
                 arr.remove("water");
             }
-            
+
         }
-        
-        out.setText("you've choosen: "+ arr.toString());
-      
+
+        out.setText("you've choosen: " + arr.toString());
+
     }
-    
+
     public static void main(String[] args) {
-        final int FRAME_WIDTH =350;
+        final int FRAME_WIDTH = 350;
         final int FRAME_HEIGHT = 120;
         CheckBoxDemonstration frame = new CheckBoxDemonstration();
-        frame.setSize(FRAME_WIDTH,FRAME_HEIGHT);
+        frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
         frame.setVisible(true);
     }
 
