@@ -71,8 +71,8 @@ public class TheStack {
             System.out.print(string+ " ");
         }
         System.out.println();
-        for (int i = 0; i < tempString.length; i++) {
-            push(tempString[i]);
+        for (String tempString1 : tempString) {
+            push(tempString1);
         }
         
         displayTheStack();
